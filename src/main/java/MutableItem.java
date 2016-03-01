@@ -7,7 +7,6 @@ public class MutableItem {
 
     public void degrade() {
         if (isAgedBrie(item)) {
-            age(item);
 
             incrementQuality(item);
 
@@ -17,7 +16,6 @@ public class MutableItem {
         }
 
         if (isBackstagePasses(item)) {
-            age(item);
 
             incrementQuality(item);
 
@@ -35,7 +33,6 @@ public class MutableItem {
         }
 
         if (isPerishable(item)) {
-            age(item);
 
             decrementQuality(item);
 
@@ -49,7 +46,7 @@ public class MutableItem {
         return item.sellIn < 0;
     }
 
-    private void age(Item item) {
+    public void age() {
         item.sellIn = item.sellIn - 1;
     }
 

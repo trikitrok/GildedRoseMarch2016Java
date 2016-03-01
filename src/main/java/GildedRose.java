@@ -14,6 +14,7 @@ public class GildedRose {
 
             MutableItem mutableItem = new MutableItem(item);
 
+            mutableItem.age();
             mutableItem.degrade();
         }
     }
