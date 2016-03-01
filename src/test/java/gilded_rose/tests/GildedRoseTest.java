@@ -140,7 +140,7 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void conjuredItemsQualityDecreasesByFourEachDayAfterSellDate() {
+    public void conjured_items_quality_decreases_by_four_each_day_after_sell_date() {
         Item conjuredItem = new Item("Conjured Mana Cake", 5, 18);
         gildedRose = aGildedRoseWithItems(conjuredItem);
 
@@ -150,7 +150,7 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void conjuredItemsQualityCannotBeLessThanZero() {
+    public void conjured_tems_quality_cannot_be_less_than_zero() {
         Item conjuredItem = new Item("Conjured Mana Cake", 5, 18);
         gildedRose = aGildedRoseWithItems(conjuredItem);
 
@@ -160,7 +160,7 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void conjuredSulfurasIsInmutable() {
+    public void conjured_sulfuras_is_inmutable() {
         Item conjuredSulfuras = new Item("Conjured Sulfuras, Hand of Ragnaros", 5, 18);
         gildedRose = aGildedRoseWithItems(conjuredSulfuras);
 
@@ -171,7 +171,7 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void conjuredAgedBrieQualityIncreasesByTwoEachDayBeforeSellDate() {
+    public void conjured_aged_Brie_quality_increases_by_two_each_day_before_sell_date() {
         Item agedBrie = new Item("Conjured Aged Brie", 2, 0);
         gildedRose = aGildedRoseWithItems(agedBrie);
 
@@ -181,7 +181,7 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void conjuredBackstagePassesQualityIncreasesTwiceFaster() {
+    public void conjured_backstage_passes_quality_increases_twice_faster() {
         Item backstagePasses = new Item("Conjured Backstage passes to a TAFKAL80ETC concert", 15, 0);
         gildedRose = aGildedRoseWithItems(backstagePasses);
 
@@ -191,7 +191,7 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void conjuredBackstagePassesQualityIsZeroAfterTheSellDate() {
+    public void conjured_backstage_passes_quality_is_zero_after_the_sell_date() {
         Item backstagePasses = new Item("Conjured Backstage passes to a TAFKAL80ETC concert", 15, 2);
         gildedRose = aGildedRoseWithItems(backstagePasses);
 

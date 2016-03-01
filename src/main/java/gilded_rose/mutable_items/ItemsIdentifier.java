@@ -19,7 +19,7 @@ class ItemsIdentifier {
     }
 
     public static boolean isSulfuras(String name) {
-        return name.equals(SULFURAS_HAND_OF_RAGNAROS);
+        return name.contains(SULFURAS_HAND_OF_RAGNAROS);
     }
 
     public static boolean isConjured(String name) {
