@@ -44,17 +44,15 @@ public class GildedRose {
         }
 
         if (item.sellIn < 0) {
-            if (!isAgedBrie(item)) {
-                if (!isBackstagePasses(item)) {
-                    decrementQuality(item);
-                }
+            if (isPerishable(item)) {
+                decrementQuality(item);
             }
 
-            if(isBackstagePasses(item)) {
+            if (isBackstagePasses(item)) {
                 item.quality = item.quality - item.quality;
             }
 
-            if (isAgedBrie(item)){
+            if (isAgedBrie(item)) {
                 incrementQuality(item);
             }
         }
