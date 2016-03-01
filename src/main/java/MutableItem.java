@@ -1,7 +1,7 @@
 public class MutableItem {
     private Item item;
 
-    public MutableItem(Item item) {
+    private MutableItem(Item item) {
         this.item = item;
     }
 
@@ -72,5 +72,9 @@ public class MutableItem {
 
     private boolean isAgedBrie(Item item) {
         return item.name.equals("Aged Brie");
+    }
+
+    public static MutableItem createFrom(Item item) {
+        return new MutableItem(item);
     }
 }
