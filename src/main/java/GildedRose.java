@@ -50,7 +50,9 @@ public class GildedRose {
                 } else {
                     item.quality = item.quality - item.quality;
                 }
-            } else {
+            }
+
+            if (isAgedBrie(item)){
                 incrementQuality(item);
             }
         }
