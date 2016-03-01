@@ -1,4 +1,8 @@
-public class AgedBrie extends MutableItem {
+package gilded_rose.mutable_items;
+
+import gilded_rose.Item;
+
+class AgedBrie extends MutableItem {
 
     public AgedBrie(Item item) {
         super(item);

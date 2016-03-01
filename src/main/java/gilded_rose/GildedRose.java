@@ -1,3 +1,7 @@
+package gilded_rose;
+
+import gilded_rose.mutable_items.MutableItems;
+
 public class GildedRose {
     Item[] items;
 

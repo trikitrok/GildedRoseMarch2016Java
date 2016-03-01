@@ -1,4 +1,8 @@
-public class ItemsIdentifier {
+package gilded_rose.mutable_items;
+
+import gilded_rose.Item;
+
+class ItemsIdentifier {
     public static boolean isPerishable(Item item) {
         return !isAgedBrie(item) && !isBackstagePasses(item);
     }

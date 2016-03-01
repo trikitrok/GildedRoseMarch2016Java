@@ -1,4 +1,8 @@
-abstract public class MutableItem {
+package gilded_rose.mutable_items;
+
+import gilded_rose.Item;
+
+abstract class MutableItem {
     public static final int MAXIMUM_QUALITY = 50;
     protected Item item;
 
@@ -46,5 +50,21 @@ abstract public class MutableItem {
         if (item.quality > 0) {
             item.quality -= 1;
         }
+    }
+
+    public static MutableItem createFrom(Item item) {
+        if (ItemsIdentifier.isAgedBrie(item)) {
+            return new AgedBrie(item);
+        }
+
+        if (ItemsIdentifier.isBackstagePasses(item)) {
+            return new BackstageConcertPasses(item);
+        }
+
+        if (ItemsIdentifier.isPerishable(item)) {
+            return new PerishableItem(item);
+        }
+
+        throw new RuntimeException("Unknown item type");
     }
 }

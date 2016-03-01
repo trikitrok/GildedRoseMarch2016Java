@@ -1,8 +1,9 @@
+package gilded_rose.tests;
 
-
-import static org.junit.Assert.*;
-
+import gilded_rose.GildedRose;
+import org.junit.Assert;
 import org.junit.Test;
+import gilded_rose.Item;
 
 public class GildedRoseTest {
     @Test
@@ -13,7 +14,7 @@ public class GildedRoseTest {
         afterDays(10);
 
         assertItemsQuality(80, sulfuras);
-        assertEquals(0, sulfuras.sellIn);
+        Assert.assertEquals(0, sulfuras.sellIn);
     }
 
     @Test
@@ -23,7 +24,7 @@ public class GildedRoseTest {
 
         afterDays(10);
 
-        assertEquals(-8, notSulfuras.sellIn);
+        Assert.assertEquals(-8, notSulfuras.sellIn);
     }
 
     @Test
@@ -135,7 +136,7 @@ public class GildedRoseTest {
     }
 
     private void assertItemsQuality(int quality, Item item) {
-        assertEquals(quality, item.quality);
+        Assert.assertEquals(quality, item.quality);
     }
 
     private GildedRose aGildedRoseWithItems(Item... items) {

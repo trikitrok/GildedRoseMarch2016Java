@@ -1,4 +1,8 @@
-public class PerishableItem extends MutableItem {
+package gilded_rose.mutable_items;
+
+import gilded_rose.Item;
+
+class PerishableItem extends MutableItem {
 
     public PerishableItem(Item item) {
         super(item);

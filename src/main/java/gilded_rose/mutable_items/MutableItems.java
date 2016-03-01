@@ -1,3 +1,7 @@
+package gilded_rose.mutable_items;
+
+import gilded_rose.Item;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +19,7 @@ public class MutableItems {
         for (int i = 0; i < items.length; i++) {
             Item item = items[i];
             if (!ItemsIdentifier.isSulfuras(item)) {
-                MutableItem mutableItem = MutableItemFactory.createFrom(item);
+                MutableItem mutableItem = MutableItem.createFrom(item);
                 mutableItems.add(mutableItem);
             }
         }
