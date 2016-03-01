@@ -16,7 +16,7 @@ public class BackstageConcertPasses extends MutableItem {
         }
 
         if (outOfDate()) {
-            item.quality = 0;
+            vanishQuality();
         }
     }
 }

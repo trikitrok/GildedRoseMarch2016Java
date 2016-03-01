@@ -32,6 +32,10 @@ abstract public class MutableItem {
         }
     }
 
+    protected void vanishQuality() {
+        item.quality = 0;
+    }
+
     protected int quality() {
         return item.quality;
     }
