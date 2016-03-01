@@ -17,17 +17,17 @@ public class MutableItem {
         }
 
         if (isBackstagePasses(item)) {
+            age(item);
+
             incrementQuality(item);
 
-            if (item.sellIn < 11) {
+            if (item.sellIn < 10) {
                 incrementQuality(item);
             }
 
-            if (item.sellIn < 6) {
+            if (item.sellIn < 5) {
                 incrementQuality(item);
             }
-
-            age(item);
 
             if (outOfDate()) {
                 item.quality = 0;
