@@ -10,14 +10,16 @@ public class BackstageConcertPasses extends MutableItem {
             return;
         }
 
-        incrementQuality();
-
-        if (daysToBeSold() < 10) {
-            incrementQuality();
+        if(daysToBeSold() >= 10) {
+            incrementQualityBy(1);
         }
 
-        if (daysToBeSold() < 5) {
-            incrementQuality();
+        if (5 <= daysToBeSold() && daysToBeSold() < 10) {
+            incrementQualityBy(2);
+        }
+
+        if (0 <= daysToBeSold() && daysToBeSold() < 5) {
+            incrementQualityBy(3);
         }
     }
 }
