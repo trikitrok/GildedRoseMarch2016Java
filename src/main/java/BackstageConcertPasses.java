@@ -7,11 +7,11 @@ public class BackstageConcertPasses extends MutableItem {
     public void updateQuality() {
         incrementQuality();
 
-        if (item.sellIn < 10) {
+        if (daysToBeSold() < 10) {
             incrementQuality();
         }
 
-        if (item.sellIn < 5) {
+        if (daysToBeSold() < 5) {
             incrementQuality();
         }
 

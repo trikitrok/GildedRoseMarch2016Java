@@ -9,11 +9,15 @@ abstract public class MutableItem {
     abstract public void updateQuality();
 
     protected boolean outOfDate() {
-        return item.sellIn < 0;
+        return daysToBeSold() < 0;
+    }
+
+    protected int daysToBeSold() {
+        return item.sellIn;
     }
 
     public void age() {
-        item.sellIn = item.sellIn - 1;
+        item.sellIn = daysToBeSold() - 1;
     }
 
     protected void incrementQuality() {
