@@ -21,6 +21,10 @@ public class GildedRose {
             incrementQuality(item);
 
             age(item);
+
+            if (item.sellIn < 0) {
+                incrementQuality(item);
+            }
         }
 
         if (isBackstagePasses(item)) {
@@ -35,27 +39,22 @@ public class GildedRose {
             }
 
             age(item);
+
+            if (item.sellIn < 0) {
+                item.quality = 0;
+            }
         }
 
         if (isPerishable(item)) {
             decrementQuality(item);
 
             age(item);
-        }
 
-        if (item.sellIn < 0) {
-            if (isPerishable(item)) {
+            if (item.sellIn < 0) {
                 decrementQuality(item);
             }
-
-            if (isBackstagePasses(item)) {
-                item.quality = 0;
-            }
-
-            if (isAgedBrie(item)) {
-                incrementQuality(item);
-            }
         }
+
     }
 
     private void age(Item item) {
