@@ -9,7 +9,6 @@ public class MutableItems {
     private List<MutableItem> mutableItems;
 
     public MutableItems(List<MutableItem> mutableItems) {
-
         this.mutableItems = mutableItems;
     }
 
