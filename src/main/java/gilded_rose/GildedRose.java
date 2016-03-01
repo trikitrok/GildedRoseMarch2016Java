@@ -10,7 +10,14 @@ public class GildedRose {
     }
 
     public void updateQuality() {
-        MutableItems mutableItems = MutableItems.createFrom(items);
+        degrade(mutableItems());
+    }
+
+    private MutableItems mutableItems() {
+        return MutableItems.createFrom(items);
+    }
+
+    private void degrade(MutableItems mutableItems) {
         mutableItems.degrade();
     }
 }
