@@ -17,17 +17,19 @@ public class GildedRose {
             return;
         }
 
-        if (isAgedBrie(item) || isBackstagePasses(item)) {
+        if (isAgedBrie(item)) {
+            incrementQuality(item);
+        }
+
+        if (isBackstagePasses(item)) {
             incrementQuality(item);
 
-            if (isBackstagePasses(item)) {
-                if (item.sellIn < 11) {
-                    incrementQuality(item);
-                }
+            if (item.sellIn < 11) {
+                incrementQuality(item);
+            }
 
-                if (item.sellIn < 6) {
-                    incrementQuality(item);
-                }
+            if (item.sellIn < 6) {
+                incrementQuality(item);
             }
         }
 
