@@ -5,6 +5,8 @@ import org.junit.Assert;
 import org.junit.Test;
 import gilded_rose.Item;
 
+import static org.junit.Assert.assertEquals;
+
 public class GildedRoseTest {
     @Test
     public void sulfuras_is_inmutable() {
@@ -14,7 +16,7 @@ public class GildedRoseTest {
         afterDays(10);
 
         assertItemsQuality(80, sulfuras);
-        Assert.assertEquals(0, sulfuras.sellIn);
+        assertEquals(0, sulfuras.sellIn);
     }
 
     @Test
@@ -24,7 +26,7 @@ public class GildedRoseTest {
 
         afterDays(10);
 
-        Assert.assertEquals(-8, notSulfuras.sellIn);
+        assertEquals(-8, notSulfuras.sellIn);
     }
 
     @Test
@@ -137,6 +139,67 @@ public class GildedRoseTest {
         assertItemsQuality(0, conjuredItem);
     }
 
+    @Test
+    public void conjuredItemsQualityDecreasesByFourEachDayAfterSellDate() {
+        Item conjuredItem = new Item("Conjured Mana Cake", 5, 18);
+        gildedRose = aGildedRoseWithItems(conjuredItem);
+
+        afterDays(7);
+
+        assertItemsQuality(0, conjuredItem);
+    }
+
+    @Test
+    public void conjuredItemsQualityCannotBeLessThanZero() {
+        Item conjuredItem = new Item("Conjured Mana Cake", 5, 18);
+        gildedRose = aGildedRoseWithItems(conjuredItem);
+
+        afterDays(200);
+
+        assertItemsQuality(0, conjuredItem);
+    }
+
+    @Test
+    public void conjuredSulfurasIsInmutable() {
+        Item conjuredSulfuras = new Item("Conjured Sulfuras, Hand of Ragnaros", 5, 18);
+        gildedRose = aGildedRoseWithItems(conjuredSulfuras);
+
+        afterDays(200);
+
+        assertItemsQuality(18, conjuredSulfuras);
+        assertEquals(5, conjuredSulfuras.sellIn);
+    }
+
+    @Test
+    public void conjuredAgedBrieQualityIncreasesByTwoEachDayBeforeSellDate() {
+        Item agedBrie = new Item("Conjured Aged Brie", 2, 0);
+        gildedRose = aGildedRoseWithItems(agedBrie);
+
+        afterDays(2);
+
+        assertItemsQuality(4, agedBrie);
+    }
+
+    @Test
+    public void conjuredBackstagePassesQualityIncreasesTwiceFaster() {
+        Item backstagePasses = new Item("Conjured Backstage passes to a TAFKAL80ETC concert", 15, 0);
+        gildedRose = aGildedRoseWithItems(backstagePasses);
+
+        afterDays(15);
+
+        assertItemsQuality(50, backstagePasses);
+    }
+
+    @Test
+    public void conjuredBackstagePassesQualityIsZeroAfterTheSellDate() {
+        Item backstagePasses = new Item("Conjured Backstage passes to a TAFKAL80ETC concert", 15, 2);
+        gildedRose = aGildedRoseWithItems(backstagePasses);
+
+        afterDays(16);
+
+        assertItemsQuality(0, backstagePasses);
+    }
+
     private GildedRose gildedRose;
 
     private void afterDays(int numberOfDays) {
@@ -146,7 +209,7 @@ public class GildedRoseTest {
     }
 
     private void assertItemsQuality(int quality, Item item) {
-        Assert.assertEquals(quality, item.quality);
+        assertEquals(quality, item.quality);
     }
 
     private GildedRose aGildedRoseWithItems(Item... items) {
