@@ -21,8 +21,18 @@ abstract public class MutableItem {
     }
 
     protected void incrementQuality() {
-        if (item.quality < MAXIMUM_QUALITY) {
-            item.quality = item.quality + 1;
+        if (quality() < MAXIMUM_QUALITY) {
+            item.quality = quality() + 1;
         }
+    }
+
+    protected void decrementQuality() {
+        if (quality() > 0) {
+            item.quality = quality() - 1;
+        }
+    }
+
+    protected int quality() {
+        return item.quality;
     }
 }

@@ -12,10 +12,4 @@ public class PerishableItem extends MutableItem {
             decrementQuality();
         }
     }
-
-    private void decrementQuality() {
-        if (item.quality > 0) {
-            item.quality = item.quality - 1;
-        }
-    }
 }
