@@ -47,9 +47,11 @@ public class GildedRose {
             if (!isAgedBrie(item)) {
                 if (!isBackstagePasses(item)) {
                     decrementQuality(item);
-                } else {
-                    item.quality = item.quality - item.quality;
                 }
+            }
+
+            if(isBackstagePasses(item)) {
+                item.quality = item.quality - item.quality;
             }
 
             if (isAgedBrie(item)){
