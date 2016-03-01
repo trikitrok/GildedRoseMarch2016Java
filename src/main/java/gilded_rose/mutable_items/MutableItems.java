@@ -15,14 +15,9 @@ public class MutableItems {
 
     public static MutableItems createFrom(Item[] items) {
         List<MutableItem> mutableItems = new ArrayList<MutableItem>();
-
         for (Item item : items) {
-            if (!ItemsIdentifier.isSulfuras(item.name)) {
-                MutableItem mutableItem = MutableItemFactory.createFrom(item);
-                mutableItems.add(mutableItem);
-            }
+            add(mutableItems, item);
         }
-
         return new MutableItems(mutableItems);
     }
 
@@ -31,5 +26,12 @@ public class MutableItems {
             mutableItem.age();
             mutableItem.updateQuality();
         }
+    }
+
+    private static void add(List<MutableItem> mutableItems, Item item) {
+        if (ItemsIdentifier.isSulfuras(item.name)) {
+            return;
+        }
+        mutableItems.add(MutableItemFactory.createFrom(item));
     }
 }
