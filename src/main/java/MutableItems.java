@@ -15,7 +15,7 @@ public class MutableItems {
         for (int i = 0; i < items.length; i++) {
             Item item = items[i];
             if (!isSulfuras(item)) {
-                MutableItem mutableItem = MutableItem.createFrom(item);
+                MutableItem mutableItem = MutableItemFactory.createFrom(item);
                 mutableItems.add(mutableItem);
             }
         }
