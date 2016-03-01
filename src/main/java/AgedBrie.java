@@ -6,10 +6,10 @@ public class AgedBrie extends MutableItem {
 
     @Override
     public void updateQuality() {
-        incrementQuality();
-
         if (outOfDate()) {
-            incrementQuality();
+            incrementQualityBy(2);
+            return;
         }
+        incrementQualityBy(1);
     }
 }

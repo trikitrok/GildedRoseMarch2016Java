@@ -38,6 +38,12 @@ abstract public class MutableItem {
         }
     }
 
+    protected void incrementQualityBy(int num) {
+        for(int i = 0; i<num; ++i) {
+            incrementQuality();
+        }
+    }
+
     protected void vanishQuality() {
         item.quality = 0;
     }
