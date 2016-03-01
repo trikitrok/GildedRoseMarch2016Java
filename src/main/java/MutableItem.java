@@ -1,18 +1,13 @@
 public class MutableItem {
-    private Item item;
+    protected Item item;
 
-    private MutableItem(Item item) {
+    protected MutableItem(Item item) {
         this.item = item;
     }
 
     public void updateQuality() {
         if (isAgedBrie(item)) {
-
-            incrementQuality(item);
-
-            if (outOfDate()) {
-                incrementQuality(item);
-            }
+           throw new RuntimeException("code should not get here (AgedBrie)");
         }
 
         if (isBackstagePasses(item)) {
@@ -42,7 +37,7 @@ public class MutableItem {
         }
     }
 
-    private boolean outOfDate() {
+    protected boolean outOfDate() {
         return item.sellIn < 0;
     }
 
@@ -54,7 +49,7 @@ public class MutableItem {
         return !isAgedBrie(item) && !isBackstagePasses(item);
     }
 
-    private void incrementQuality(Item item) {
+    protected void incrementQuality(Item item) {
         if (item.quality < 50) {
             item.quality = item.quality + 1;
         }
@@ -70,11 +65,14 @@ public class MutableItem {
         return item.name.equals("Backstage passes to a TAFKAL80ETC concert");
     }
 
-    private boolean isAgedBrie(Item item) {
+    private static boolean isAgedBrie(Item item) {
         return item.name.equals("Aged Brie");
     }
 
     public static MutableItem createFrom(Item item) {
+        if (isAgedBrie(item)) {
+            return new AgedBrie(item);
+        }
         return new MutableItem(item);
     }
 }
