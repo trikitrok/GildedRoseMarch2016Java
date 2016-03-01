@@ -11,7 +11,7 @@ public class MutableItem {
 
             age(item);
 
-            if (item.sellIn < 0) {
+            if (outOfDate()) {
                 incrementQuality(item);
             }
         }
@@ -29,7 +29,7 @@ public class MutableItem {
 
             age(item);
 
-            if (item.sellIn < 0) {
+            if (outOfDate()) {
                 item.quality = 0;
             }
         }
@@ -39,10 +39,14 @@ public class MutableItem {
 
             age(item);
 
-            if (item.sellIn < 0) {
+            if (outOfDate()) {
                 decrementQuality(item);
             }
         }
+    }
+
+    private boolean outOfDate() {
+        return item.sellIn < 0;
     }
 
     private void age(Item item) {
