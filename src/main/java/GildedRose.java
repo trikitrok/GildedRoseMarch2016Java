@@ -19,6 +19,8 @@ public class GildedRose {
 
         if (isAgedBrie(item)) {
             incrementQuality(item);
+
+            age(item);
         }
 
         if (isBackstagePasses(item)) {
@@ -31,13 +33,15 @@ public class GildedRose {
             if (item.sellIn < 6) {
                 incrementQuality(item);
             }
+
+            age(item);
         }
 
         if (isPerishable(item)) {
             decrementQuality(item);
-        }
 
-        age(item);
+            age(item);
+        }
 
         if (item.sellIn < 0) {
             if (!isAgedBrie(item)) {
