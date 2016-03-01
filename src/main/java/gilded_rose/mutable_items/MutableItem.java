@@ -5,7 +5,7 @@ import gilded_rose.Item;
 abstract class MutableItem {
     public static final int MAXIMUM_QUALITY = 50;
     public static final int MINIMUM_QUALITY = 0;
-    protected Item item;
+    private Item item;
 
     protected MutableItem(Item item) {
         this.item = item;
