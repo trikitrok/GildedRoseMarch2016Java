@@ -49,7 +49,7 @@ public class GildedRose {
             }
 
             if (isBackstagePasses(item)) {
-                item.quality = item.quality - item.quality;
+                item.quality = 0;
             }
 
             if (isAgedBrie(item)) {
