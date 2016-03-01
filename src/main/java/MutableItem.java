@@ -15,12 +15,7 @@ public class MutableItem {
         }
 
         if (isPerishable(item)) {
-
-            decrementQuality(item);
-
-            if (outOfDate()) {
-                decrementQuality(item);
-            }
+            throw new RuntimeException("code should not get here (Perishable Item)");
         }
     }
 
@@ -32,19 +27,13 @@ public class MutableItem {
         item.sellIn = item.sellIn - 1;
     }
 
-    private boolean isPerishable(Item item) {
+    private static boolean isPerishable(Item item) {
         return !isAgedBrie(item) && !isBackstagePasses(item);
     }
 
     protected void incrementQuality(Item item) {
         if (item.quality < 50) {
             item.quality = item.quality + 1;
-        }
-    }
-
-    private void decrementQuality(Item item) {
-        if (item.quality > 0) {
-            item.quality = item.quality - 1;
         }
     }
 
@@ -63,6 +52,10 @@ public class MutableItem {
 
         if(isBackstagePasses(item)) {
             return new BackstageConcertPasses(item);
+        }
+
+        if (isPerishable(item)) {
+            return new PerishableItem(item);
         }
 
         return new MutableItem(item);
