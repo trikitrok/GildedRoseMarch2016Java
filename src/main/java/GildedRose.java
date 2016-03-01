@@ -17,9 +17,7 @@ public class GildedRose {
             return;
         }
 
-        if (!isAgedBrie(item) && !isBackstagePasses(item)) {
-            decrementQuality(item);
-        } else {
+        if (isAgedBrie(item) || isBackstagePasses(item)) {
             incrementQuality(item);
 
             if (isBackstagePasses(item)) {
@@ -31,6 +29,10 @@ public class GildedRose {
                     incrementQuality(item);
                 }
             }
+        }
+
+        if (!isAgedBrie(item) && !isBackstagePasses(item)) {
+            decrementQuality(item);
         }
 
         item.sellIn = item.sellIn - 1;
