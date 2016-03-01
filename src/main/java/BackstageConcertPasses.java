@@ -5,6 +5,11 @@ public class BackstageConcertPasses extends MutableItem {
 
     @Override
     public void updateQuality() {
+        if (outOfDate()) {
+            vanishQuality();
+            return;
+        }
+
         incrementQuality();
 
         if (daysToBeSold() < 10) {
@@ -13,10 +18,6 @@ public class BackstageConcertPasses extends MutableItem {
 
         if (daysToBeSold() < 5) {
             incrementQuality();
-        }
-
-        if (outOfDate()) {
-            vanishQuality();
         }
     }
 }
