@@ -4,6 +4,7 @@ import gilded_rose.Item;
 
 abstract class MutableItem {
     public static final int MAXIMUM_QUALITY = 50;
+    public static final int MINIMUM_QUALITY = 0;
     protected Item item;
 
     protected MutableItem(Item item) {
@@ -52,7 +53,7 @@ abstract class MutableItem {
     }
 
     private void decrementQuality() {
-        if (item.quality <= 0) {
+        if (item.quality <= MINIMUM_QUALITY) {
             return;
         }
         item.quality -= 1;
