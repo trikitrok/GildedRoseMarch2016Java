@@ -5,14 +5,14 @@ public class BackstageConcertPasses extends MutableItem {
 
     @Override
     public void updateQuality() {
-        incrementQuality(item);
+        incrementQuality();
 
         if (item.sellIn < 10) {
-            incrementQuality(item);
+            incrementQuality();
         }
 
         if (item.sellIn < 5) {
-            incrementQuality(item);
+            incrementQuality();
         }
 
         if (outOfDate()) {

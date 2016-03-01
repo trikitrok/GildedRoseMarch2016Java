@@ -16,7 +16,7 @@ abstract public class MutableItem {
         item.sellIn = item.sellIn - 1;
     }
 
-    protected void incrementQuality(Item item) {
+    protected void incrementQuality() {
         if (item.quality < MAXIMUM_QUALITY) {
             item.quality = item.quality + 1;
         }
