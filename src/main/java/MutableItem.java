@@ -32,6 +32,12 @@ abstract public class MutableItem {
         }
     }
 
+    protected void decrementQualityBy(int num) {
+        for(int i = 0; i<num; ++i) {
+            decrementQuality();
+        }
+    }
+
     protected void vanishQuality() {
         item.quality = 0;
     }

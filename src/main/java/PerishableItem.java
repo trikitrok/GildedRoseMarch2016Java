@@ -6,10 +6,10 @@ public class PerishableItem extends MutableItem {
 
     @Override
     public void updateQuality() {
-        decrementQuality();
-
         if (outOfDate()) {
-            decrementQuality();
+            decrementQualityBy(2);
+            return;
         }
+        decrementQualityBy(1);
     }
 }
