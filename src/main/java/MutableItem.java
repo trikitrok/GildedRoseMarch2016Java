@@ -11,20 +11,7 @@ public class MutableItem {
         }
 
         if (isBackstagePasses(item)) {
-
-            incrementQuality(item);
-
-            if (item.sellIn < 10) {
-                incrementQuality(item);
-            }
-
-            if (item.sellIn < 5) {
-                incrementQuality(item);
-            }
-
-            if (outOfDate()) {
-                item.quality = 0;
-            }
+            throw new RuntimeException("code should not get here (BackstagePasses)");
         }
 
         if (isPerishable(item)) {
@@ -61,7 +48,7 @@ public class MutableItem {
         }
     }
 
-    private boolean isBackstagePasses(Item item) {
+    private static boolean isBackstagePasses(Item item) {
         return item.name.equals("Backstage passes to a TAFKAL80ETC concert");
     }
 
@@ -73,6 +60,11 @@ public class MutableItem {
         if (isAgedBrie(item)) {
             return new AgedBrie(item);
         }
+
+        if(isBackstagePasses(item)) {
+            return new BackstageConcertPasses(item);
+        }
+
         return new MutableItem(item);
     }
 }
