@@ -20,13 +20,13 @@ abstract public class MutableItem {
         item.sellIn = daysToBeSold() - 1;
     }
 
-    protected void incrementQuality() {
+    private void incrementQuality() {
         if (quality() < MAXIMUM_QUALITY) {
             item.quality = quality() + 1;
         }
     }
 
-    protected void decrementQuality() {
+    private void decrementQuality() {
         if (quality() > 0) {
             item.quality = quality() - 1;
         }
@@ -48,7 +48,7 @@ abstract public class MutableItem {
         item.quality = 0;
     }
 
-    protected int quality() {
+    private int quality() {
         return item.quality;
     }
 }
