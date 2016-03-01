@@ -1,23 +1,11 @@
-public class MutableItem {
+abstract public class MutableItem {
     protected Item item;
 
     protected MutableItem(Item item) {
         this.item = item;
     }
 
-    public void updateQuality() {
-        if (isAgedBrie(item)) {
-           throw new RuntimeException("code should not get here (AgedBrie)");
-        }
-
-        if (isBackstagePasses(item)) {
-            throw new RuntimeException("code should not get here (BackstagePasses)");
-        }
-
-        if (isPerishable(item)) {
-            throw new RuntimeException("code should not get here (Perishable Item)");
-        }
-    }
+    abstract public void updateQuality();
 
     protected boolean outOfDate() {
         return item.sellIn < 0;
@@ -50,7 +38,7 @@ public class MutableItem {
             return new AgedBrie(item);
         }
 
-        if(isBackstagePasses(item)) {
+        if (isBackstagePasses(item)) {
             return new BackstageConcertPasses(item);
         }
 
@@ -58,6 +46,6 @@ public class MutableItem {
             return new PerishableItem(item);
         }
 
-        return new MutableItem(item);
+        throw new RuntimeException("Unknown item type");
     }
 }
