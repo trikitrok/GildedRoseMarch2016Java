@@ -1,21 +1,27 @@
 package gilded_rose.mutable_items;
 
-import gilded_rose.Item;
-
 class ItemsIdentifier {
-    public static boolean isPerishable(Item item) {
-        return !isAgedBrie(item) && !isBackstagePasses(item);
+    public static boolean isPerishable(String name) {
+        return !isAgedBrie(name) && !isBackstagePasses(name);
     }
 
-    public static boolean isBackstagePasses(Item item) {
-        return item.name.equals("Backstage passes to a TAFKAL80ETC concert");
+    public static boolean isBackstagePasses(String name) {
+        return name.equals("Backstage passes to a TAFKAL80ETC concert");
     }
 
-    public static boolean isAgedBrie(Item item) {
-        return item.name.equals("Aged Brie");
+    public static boolean isAgedBrie(String name) {
+        return name.equals("Aged Brie");
     }
 
-    public static boolean isSulfuras(Item item) {
-        return item.name.equals("Sulfuras, Hand of Ragnaros");
+    public static boolean isSulfuras(String name) {
+        return name.equals("Sulfuras, Hand of Ragnaros");
+    }
+
+    public static boolean isConjured(String name) {
+        return name.contains("Conjured");
+    }
+
+    public static String extractNotConjuredName(String name) {
+        return name.replace("Conjured", "").trim();
     }
 }
