@@ -35,9 +35,9 @@ public class MutableItem {
         }
 
         if (isPerishable(item)) {
-            decrementQuality(item);
-
             age(item);
+
+            decrementQuality(item);
 
             if (outOfDate()) {
                 decrementQuality(item);
