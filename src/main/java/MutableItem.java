@@ -38,13 +38,13 @@ abstract public class MutableItem {
 
     private void incrementQuality() {
         if (item.quality < MAXIMUM_QUALITY) {
-            item.quality = item.quality + 1;
+            item.quality += 1;
         }
     }
 
     private void decrementQuality() {
         if (item.quality > 0) {
-            item.quality = item.quality - 1;
+            item.quality -= 1;
         }
     }
 }
