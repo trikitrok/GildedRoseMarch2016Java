@@ -8,28 +8,16 @@ abstract public class MutableItem {
 
     abstract public void updateQuality();
 
+    public void age() {
+        item.sellIn = daysToBeSold() - 1;
+    }
+
     protected boolean outOfDate() {
         return daysToBeSold() < 0;
     }
 
     protected int daysToBeSold() {
         return item.sellIn;
-    }
-
-    public void age() {
-        item.sellIn = daysToBeSold() - 1;
-    }
-
-    private void incrementQuality() {
-        if (quality() < MAXIMUM_QUALITY) {
-            item.quality = quality() + 1;
-        }
-    }
-
-    private void decrementQuality() {
-        if (quality() > 0) {
-            item.quality = quality() - 1;
-        }
     }
 
     protected void decrementQualityBy(int num) {
@@ -50,5 +38,17 @@ abstract public class MutableItem {
 
     private int quality() {
         return item.quality;
+    }
+
+    private void incrementQuality() {
+        if (quality() < MAXIMUM_QUALITY) {
+            item.quality = quality() + 1;
+        }
+    }
+
+    private void decrementQuality() {
+        if (quality() > 0) {
+            item.quality = quality() - 1;
+        }
     }
 }
