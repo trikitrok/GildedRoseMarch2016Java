@@ -14,7 +14,7 @@ public class MutableItems {
 
         for (int i = 0; i < items.length; i++) {
             Item item = items[i];
-            if (!isSulfuras(item)) {
+            if (!ItemsIdentifier.isSulfuras(item)) {
                 MutableItem mutableItem = MutableItemFactory.createFrom(item);
                 mutableItems.add(mutableItem);
             }
@@ -29,9 +29,4 @@ public class MutableItems {
             mutableItem.updateQuality();
         }
     }
-
-    private static boolean isSulfuras(Item item) {
-        return item.name.equals("Sulfuras, Hand of Ragnaros");
-    }
-
 }
