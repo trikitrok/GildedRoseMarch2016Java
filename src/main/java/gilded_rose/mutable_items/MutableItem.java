@@ -45,14 +45,16 @@ abstract class MutableItem {
     }
 
     private void incrementQuality() {
-        if (item.quality < MAXIMUM_QUALITY) {
-            item.quality += 1;
+        if (item.quality >= MAXIMUM_QUALITY) {
+            return;
         }
+        item.quality += 1;
     }
 
     private void decrementQuality() {
-        if (item.quality > 0) {
-            item.quality -= 1;
+        if (item.quality <= 0) {
+            return;
         }
+        item.quality -= 1;
     }
 }
