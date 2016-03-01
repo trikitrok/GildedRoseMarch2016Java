@@ -33,7 +33,7 @@ public class GildedRose {
             }
         }
 
-        if (!isAgedBrie(item) && !isBackstagePasses(item)) {
+        if (isPerishable(item)) {
             decrementQuality(item);
         }
 
@@ -50,6 +50,10 @@ public class GildedRose {
                 incrementQuality(item);
             }
         }
+    }
+
+    private boolean isPerishable(Item item) {
+        return !isAgedBrie(item) && !isBackstagePasses(item);
     }
 
     private void incrementQuality(Item item) {
