@@ -37,7 +37,7 @@ public class GildedRose {
             decrementQuality(item);
         }
 
-        item.sellIn = item.sellIn - 1;
+        age(item);
 
         if (item.sellIn < 0) {
             if (!isAgedBrie(item)) {
@@ -50,6 +50,10 @@ public class GildedRose {
                 incrementQuality(item);
             }
         }
+    }
+
+    private void age(Item item) {
+        item.sellIn = item.sellIn - 1;
     }
 
     private boolean isPerishable(Item item) {
