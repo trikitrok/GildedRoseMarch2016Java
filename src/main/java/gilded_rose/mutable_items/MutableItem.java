@@ -29,15 +29,15 @@ abstract class MutableItem {
         return item.sellIn;
     }
 
-    protected void decrementQualityBy(int num) {
-        for(int i = 0; i<num; ++i) {
-            decrementQuality();
+    protected void decrementQuality(int times) {
+        for(int i = 0; i<times; ++i) {
+            decrementQualityOnce();
         }
     }
 
-    protected void incrementQualityBy(int num) {
-        for(int i = 0; i<num; ++i) {
-            incrementQuality();
+    protected void incrementQuality(int times) {
+        for(int i = 0; i<times; ++i) {
+            incrementQualityOnce();
         }
     }
 
@@ -45,14 +45,14 @@ abstract class MutableItem {
         item.quality = 0;
     }
 
-    private void incrementQuality() {
+    private void incrementQualityOnce() {
         if (item.quality >= MAXIMUM_QUALITY) {
             return;
         }
         item.quality += 1;
     }
 
-    private void decrementQuality() {
+    private void decrementQualityOnce() {
         if (item.quality <= MINIMUM_QUALITY) {
             return;
         }

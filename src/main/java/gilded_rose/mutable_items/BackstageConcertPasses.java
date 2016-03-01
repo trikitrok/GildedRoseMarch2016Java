@@ -15,15 +15,15 @@ class BackstageConcertPasses extends MutableItem {
         }
 
         if(daysToBeSold() >= 10) {
-            incrementQualityBy(1);
+            incrementQuality(1);
         }
 
         if (5 <= daysToBeSold() && daysToBeSold() < 10) {
-            incrementQualityBy(2);
+            incrementQuality(2);
         }
 
         if (0 <= daysToBeSold() && daysToBeSold() < 5) {
-            incrementQualityBy(3);
+            incrementQuality(3);
         }
     }
 }
