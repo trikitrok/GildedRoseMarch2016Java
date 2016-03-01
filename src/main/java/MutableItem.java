@@ -1,4 +1,5 @@
 abstract public class MutableItem {
+    public static final int MAXIMUM_QUALITY = 50;
     protected Item item;
 
     protected MutableItem(Item item) {
@@ -16,7 +17,7 @@ abstract public class MutableItem {
     }
 
     protected void incrementQuality(Item item) {
-        if (item.quality < 50) {
+        if (item.quality < MAXIMUM_QUALITY) {
             item.quality = item.quality + 1;
         }
     }
