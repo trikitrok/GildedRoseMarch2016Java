@@ -7,9 +7,9 @@ public class MutableItem {
 
     public void degrade() {
         if (isAgedBrie(item)) {
-            incrementQuality(item);
-
             age(item);
+
+            incrementQuality(item);
 
             if (outOfDate()) {
                 incrementQuality(item);
