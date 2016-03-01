@@ -5,7 +5,7 @@ public class MutableItem {
         this.item = item;
     }
 
-    public void degrade() {
+    public void updateQuality() {
         if (isAgedBrie(item)) {
 
             incrementQuality(item);
