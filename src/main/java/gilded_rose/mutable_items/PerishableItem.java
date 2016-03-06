@@ -9,7 +9,7 @@ class PerishableItem extends MutableItem {
     }
 
     @Override
-    public void updateQuality() {
+    protected void updateQuality() {
         if (outOfDate()) {
             decrementQuality(2);
             return;

@@ -11,9 +11,14 @@ abstract class MutableItem {
         this.item = item;
     }
 
-    abstract public void updateQuality();
+    abstract protected void updateQuality();
 
-    public void age() {
+    public void degrade() {
+        age();
+        this.updateQuality();
+    }
+
+    private void age() {
         item.sellIn = daysToBeSold() - 1;
     }
 

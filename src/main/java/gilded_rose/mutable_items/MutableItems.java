@@ -22,8 +22,7 @@ public class MutableItems {
 
     public void degrade() {
         for (MutableItem mutableItem : mutableItems) {
-            mutableItem.age();
-            mutableItem.updateQuality();
+            mutableItem.degrade();
         }
     }
 

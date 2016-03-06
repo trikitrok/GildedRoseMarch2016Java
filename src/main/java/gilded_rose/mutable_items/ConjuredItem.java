@@ -9,12 +9,8 @@ class ConjuredItem extends MutableItem {
     }
 
     @Override
-    public void updateQuality() {
+    protected void updateQuality() {
         mutableItem.updateQuality();
         mutableItem.updateQuality();
-    }
-
-    public void age() {
-        mutableItem.age();
     }
 }

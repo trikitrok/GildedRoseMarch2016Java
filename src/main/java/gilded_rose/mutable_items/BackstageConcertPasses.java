@@ -8,7 +8,7 @@ class BackstageConcertPasses extends MutableItem {
     }
 
     @Override
-    public void updateQuality() {
+    protected void updateQuality() {
         if (outOfDate()) {
             vanishQuality();
             return;
