@@ -1,7 +1,6 @@
 package gilded_rose.tests;
 
 import gilded_rose.GildedRose;
-import org.junit.Assert;
 import org.junit.Test;
 import gilded_rose.Item;
 
@@ -204,7 +203,7 @@ public class GildedRoseTest {
 
     private void afterDays(int numberOfDays) {
         for (int i = 0; i < numberOfDays; ++i) {
-            gildedRose.updateQuality();
+            gildedRose.degradeItems();
         }
     }
 

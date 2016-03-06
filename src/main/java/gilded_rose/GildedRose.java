@@ -9,7 +9,7 @@ public class GildedRose {
         this.items = items;
     }
 
-    public void updateQuality() {
+    public void degradeItems() {
         degrade(mutableItems());
     }
 

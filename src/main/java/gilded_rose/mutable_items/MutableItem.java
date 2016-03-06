@@ -15,7 +15,7 @@ abstract class MutableItem {
 
     public void degrade() {
         age();
-        this.updateQuality();
+        updateQuality();
     }
 
     private void age() {
