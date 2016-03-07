@@ -2,7 +2,7 @@ package gilded_rose.mutable_items;
 
 import gilded_rose.Item;
 
-public class MutableItemFactory {
+class MutableItemFactory {
     public static MutableItem createFrom(Item item) {
         return createFrom(item.name, item);
     }
