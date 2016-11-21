@@ -2,27 +2,29 @@ package gilded_rose.mutable_items;
 
 import gilded_rose.Item;
 
+import static gilded_rose.mutable_items.ItemsIdentifier.*;
+
 class MutableItemFactory {
     public static MutableItem createFrom(Item item) {
         return createFrom(item.name, item);
     }
 
     private static MutableItem createFrom(String name, Item item) {
-        if (ItemsIdentifier.isConjured(name)) {
+        if (isConjured(name)) {
             return new ConjuredItem(
-                createFrom(ItemsIdentifier.extractNotConjuredName(name), item)
+                createFrom(extractNotConjuredName(name), item)
             );
         }
 
-        if (ItemsIdentifier.isAgedBrie(name)) {
+        if (isAgedBrie(name)) {
             return new AgedBrie(item);
         }
 
-        if (ItemsIdentifier.isBackstagePasses(name)) {
+        if (isBackstagePasses(name)) {
             return new BackstageConcertPasses(item);
         }
 
-        if (ItemsIdentifier.isPerishable(name)) {
+        if (isPerishable(name)) {
             return new PerishableItem(item);
         }
 
