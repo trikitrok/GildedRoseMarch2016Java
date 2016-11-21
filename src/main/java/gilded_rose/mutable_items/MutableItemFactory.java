@@ -5,7 +5,7 @@ import gilded_rose.Item;
 import static gilded_rose.mutable_items.ItemsIdentifier.*;
 
 class MutableItemFactory {
-    public static MutableItem createFrom(Item item) {
+    static MutableItem createFrom(Item item) {
         return createFrom(item.name, item);
     }
 

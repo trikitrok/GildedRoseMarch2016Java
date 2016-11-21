@@ -4,7 +4,7 @@ import gilded_rose.Item;
 
 class AgedBrie extends MutableItem {
 
-    public AgedBrie(Item item) {
+    AgedBrie(Item item) {
         super(item);
     }
 

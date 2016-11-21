@@ -4,7 +4,7 @@ import gilded_rose.Item;
 
 class PerishableItem extends MutableItem {
 
-    public PerishableItem(Item item) {
+    PerishableItem(Item item) {
         super(item);
     }
 

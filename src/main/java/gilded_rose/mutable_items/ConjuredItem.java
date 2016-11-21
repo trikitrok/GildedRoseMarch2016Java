@@ -3,7 +3,7 @@ package gilded_rose.mutable_items;
 class ConjuredItem extends MutableItem {
     private MutableItem mutableItem;
 
-    public ConjuredItem(MutableItem item) {
+    ConjuredItem(MutableItem item) {
         super(item.item());
         this.mutableItem = item;
     }

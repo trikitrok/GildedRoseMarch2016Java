@@ -3,17 +3,17 @@ package gilded_rose.mutable_items;
 import gilded_rose.Item;
 
 abstract class MutableItem {
-    public static final int MAXIMUM_QUALITY = 50;
-    public static final int MINIMUM_QUALITY = 0;
+    private static final int MAXIMUM_QUALITY = 50;
+    private static final int MINIMUM_QUALITY = 0;
     private Item item;
 
-    protected MutableItem(Item item) {
+    MutableItem(Item item) {
         this.item = item;
     }
 
     abstract protected void updateQuality();
 
-    public void degrade() {
+    void degrade() {
         age();
         updateQuality();
     }
@@ -26,27 +26,27 @@ abstract class MutableItem {
         return item;
     }
 
-    protected boolean outOfDate() {
+    boolean outOfDate() {
         return daysToBeSold() < 0;
     }
 
-    protected int daysToBeSold() {
+    int daysToBeSold() {
         return item.sellIn;
     }
 
-    protected void decrementQuality(int times) {
+    void decrementQuality(int times) {
         for(int i = 0; i<times; ++i) {
             decrementQualityOnce();
         }
     }
 
-    protected void incrementQuality(int times) {
+    void incrementQuality(int times) {
         for(int i = 0; i<times; ++i) {
             incrementQualityOnce();
         }
     }
 
-    protected void vanishQuality() {
+    void vanishQuality() {
         item.quality = 0;
     }
 

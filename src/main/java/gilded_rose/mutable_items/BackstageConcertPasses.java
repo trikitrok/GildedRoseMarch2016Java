@@ -3,7 +3,7 @@ package gilded_rose.mutable_items;
 import gilded_rose.Item;
 
 class BackstageConcertPasses extends MutableItem {
-    public BackstageConcertPasses(Item item) {
+    BackstageConcertPasses(Item item) {
         super(item);
     }
 

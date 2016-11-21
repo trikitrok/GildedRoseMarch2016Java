@@ -8,7 +8,7 @@ import java.util.List;
 public class MutableItems {
     private List<MutableItem> mutableItems;
 
-    public MutableItems(List<MutableItem> mutableItems) {
+    private MutableItems(List<MutableItem> mutableItems) {
         this.mutableItems = mutableItems;
     }
 
